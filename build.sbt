@@ -4,10 +4,12 @@ version := "0.1"
 
 scalaVersion := "2.13.3"
 
-
-addCompilerPlugin (
+addCompilerPlugin(
   "org.typelevel" %% "kind-projector" % "0.11.3" cross CrossVersion.full
 )
+
+lazy val akkaVersion = "2.6.10"
+lazy val akkaHttpVersion = "10.2.3"
 
 libraryDependencies ++= Seq(
   "com.chuusai" %% "shapeless" % "2.3.3",
@@ -22,5 +24,9 @@ libraryDependencies ++= Seq(
   "eu.timepit" %% "refined-scalaz" % "0.9.20", // optional
   "eu.timepit" %% "refined-scodec" % "0.9.20", // optional
   "eu.timepit" %% "refined-scopt" % "0.9.20", // optional
-  "eu.timepit" %% "refined-shapeless" % "0.9.20" // optional
+  "eu.timepit" %% "refined-shapeless" % "0.9.20", // optional
+  "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
+  "com.typesafe.akka" %% "akka-stream" % akkaVersion,
+  "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
+  "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion
 )
